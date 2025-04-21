@@ -200,32 +200,7 @@ nav ul li a.active::after {
   }
 }
 
-@media (max-width: 600px) {
-  header nav {
-    border-radius: 10px;
-    padding: 0.1rem 0;
-  }
-  nav ul {
-    gap: 0.2rem;
-  }
-  nav ul li a {
-    font-size: 0.85rem;
-    padding: 0.32em 0.3em;
-  }
-}
-@media (max-width: 480px) {
-  header nav {
-    border-radius: 10px;
-    padding: 0.2rem 0;
-  }
-  nav ul {
-    gap: 0.8rem;
-  }
-  nav ul li a {
-    font-size: 0.65rem;
-    padding: 0.16em 0.1em;
-  }
-}
+
 .read-popup-trigger {
   
   position: static;
@@ -434,6 +409,54 @@ nav ul li a.active::after {
   box-shadow: 0 12px 32px rgba(245,166,35,0.18);
   transform: scale(1.04);
 }
+/* --- Responsive Navigation Grid for Small Screens --- */
+@media (max-width: 700px) {
+  nav ul {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.4rem 0.4rem;
+    width: 100%;
+    padding: 0.5rem 0.2rem;
+    background: linear-gradient(90deg, #fff6e0 0%, #f9f6e9 100%);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(245, 166, 35, 0.10);
+    list-style: none;
+    margin: 0;
+    justify-items: stretch;
+    align-items: stretch;
+  }
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+  nav ul li a {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    font-size: 1.05rem;
+    padding: 0.7em 0;
+    border-radius: 8px;
+    box-shadow: none;
+    background: transparent;
+    color: #7C5E3C;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    transition: color 0.2s, background 0.2s;
+  }
+  nav ul li a:hover,
+  nav ul li a.active {
+    background: rgba(245, 166, 35, 0.11);
+    color: #f5a623;
+  }
+}
+
+/* --- Stack vertically on very small screens --- */
+@media (max-width: 400px) {
+  nav ul {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 
     </style>
